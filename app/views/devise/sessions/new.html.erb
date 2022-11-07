@@ -1,4 +1,5 @@
-<div class="row container-fluid d-flex flex-direction-column justify-content-center align-items-center vh-100">
+<%= render "devise/sessions/loginnav"%>
+<div class="row container-fluid d-flex flex-direction-column justify-content-center align-items-center vh-100 overflow-hidden">
   <div class="col-sm-4 col-sm-offset-4">
     <h1 class="text-center">Login</h1>
     <hr>
@@ -23,7 +24,9 @@
       </div>
     <% end %>
       <div class="text-center mb-3">
-        <%= render "devise/shared/links" %>
+       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+       <% end -%>
       </div>
     </div>
 </div>

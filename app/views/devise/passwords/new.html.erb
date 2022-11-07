@@ -1,3 +1,4 @@
+<%= render "devise/passwords/passwordnav"%>
 <div class="row container-fluid d-flex flex-direction-column justify-content-center align-items-center vh-100">
   <div class="col-sm-4 col-sm-offset-4">
     <h2 class="text-center">Forgot your password?</h2>
@@ -14,8 +15,5 @@
         <%= f.submit "Send me reset password instructions", class: 'btn btn-primary btn-block btn-lg' %>
       </div>
     <% end %>
-    <div class="text-center">
-      <%= render "devise/shared/links" %>
-    </div>
   </div>
 </div>
