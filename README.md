@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-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
+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
 
 * System dependencies
 
