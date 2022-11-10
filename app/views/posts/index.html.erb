@@ -1,15 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<%= render "nav"%>
 
-<h1>Posts</h1>
+<h1 class="text-center mt-3">Welcome to the Wisp Social Media</h1>
+
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+  <div class="container-fluid d-flex w-100 justify-content-center">
+    <div class="border bg-white w-25 d-flex flex-column align-items-start p-3 mt-3 shadow-sm p-3 mb-5 bg-body rounded">
+    <h1><%= post.title %></h1>
+    <p> <%= post.content%> </p> 
+    </div>
+  </div>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>
-<%= link_to "Sign Out", destroy_user_session_path%>
