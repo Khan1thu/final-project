@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   def signup
     @greeting = "Hi"
 
-    mail to: current_user.email
+    mail to: User.first.email
   end
 end
