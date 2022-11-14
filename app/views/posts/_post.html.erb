@@ -7,6 +7,7 @@
   <p>
     <strong>Content:</strong>
     <%= post.content %>
+    
   </p>
 
   <% like = current_user.likes.find_by(post: @post) %>
@@ -19,5 +20,11 @@
           <%= button_to "UnLike", like_path(like), method: :delete %>
           
   <%end%>   
+
+  <p>
+    <strong>Comment:</strong>
+    <%= render @post.comments.order(id: :desc) %>
+    <%= render partial: 'comments/form', locals: {post: @post}%>
+  </p>
 
 </div>
