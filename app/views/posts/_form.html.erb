@@ -1,7 +1,9 @@
-<%= form_with model: @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title%>
-  <%= f.label :content%> 
-  <%= f.text_field :content%>
-  <%= f.submit %>
+<%= form_with model: @post, class: "text-center d-flex justify-content-center align-items-center"  do |f|%>
+  <div class="d-flex flex-column">
+    <%= f.label :title ,class: "text-start mt-3"%> 
+    <%= f.text_field :title%> 
+    <%= f.label :content, class: "text-start mt-3"%> 
+    <%= f.text_field :content%>
+    <%= f.submit class: "mt-3" %>
+  </div>
 <% end %>

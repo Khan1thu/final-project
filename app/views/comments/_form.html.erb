@@ -1,7 +1,7 @@
 <form action = "<%= post_comments_path(post)%>" method="post" >
     <input type = "hidden" name = "authenticity_token">
 
-    <textarea name="comment[context]" rows="6" cols="12"></textarea>
+    <input name="comment[context]", placeholder="Type your comment here">
 
     <input type = "submit" value = "Submit">
 </form>

@@ -1,30 +1,17 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<div id="<%= dom_id post %>" class="d-flex flex-column">
+<%= render "nav_create_post"%>
+  <h1 class="text-center mt-3">
+    <%= post.title%>
+  </h1>
 
-  <p>
-    <strong>Content:</strong>
+  <p class="text-center">
     <%= post.content %>
-    
   </p>
 
-  <% like = current_user.likes.find_by(post: @post) %>
-        <% if like.nil? %>
-
-          <%= button_to "Like", likes_path, params: {like: {post_id: post.id}}, method: :post %>
-
-        <% else %>
-
-          <%= button_to "UnLike", like_path(like), method: :delete %>
-          
-  <%end%>   
-
-  <p>
+  <div class="d-flex flex-column justify-content-center align-items-center">
     <strong>Comment:</strong>
-    <%= render @post.comments.order(id: :desc) %>
     <%= render partial: 'comments/form', locals: {post: @post}%>
-  </p>
+  </div>
 
+  <%= render @post.comments.order(id: :desc) %>
 </div>
