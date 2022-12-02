@@ -1,7 +1,11 @@
 <%= render "nav"%>
 
 <h1 class="text-center mt-3">Welcome to the Wisp Social Media</h1>
-
+<% if current_user.avatar.attached? %>
+  <%= image_tag current_user.avatar , class: "avatar"%>
+<%else%>
+  <%= image_tag current_user.gravatar_url %>
+<%end%>
 
 <div id="posts">
   <% @posts.each do |p| %>
@@ -42,3 +46,5 @@
   </div>
   <% end %>
 </div>
+
+<%= link_to "Edit User Profile", edit_user_registration_path%>
