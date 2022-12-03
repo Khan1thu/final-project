@@ -1,0 +1,49 @@
+<%= stylesheet_link_tag "UserShow" %>
+<%= render "nav"%>
+<div class="container">
+
+    <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar , class: "avatar"%>
+    <%else%>
+        <%= image_tag current_user.gravatar_url, class: "avatar" %>
+    <%end%>
+
+    <h1 class = ""> <%= current_user.email %> </h1>
+    <h1> Your Posts </h1>
+    <% current_user.post.all.each do |p|%>
+        <div class="container-fluid d-flex w-100 justify-content-center">
+        <div class="d-flex flex-column align-items-start p-3 mt-3">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+            <%= p.title %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+            by <%= p.user.email%>
+            </h6>
+            <p class="card-text">
+            <%= p.content%>
+            </p>
+            <div class="d-flex justify-content-between align-items-center w-100">
+
+            <% like = current_user.likes.find_by(post: @posts) %>
+
+            <% if like.nil? %>
+
+                <%= button_to "Like", likes_path, params: {like: {post_id: p.id}}, method: :post, class: "btn  btn-primary" %>
+            
+            <% else %>
+
+                <%= button_to "UnLike", like_path(like), method: :delete, class: "btn  btn-primary" %>
+
+            <%end%> 
+
+            <button class="btn  btn-primary">
+            <%= link_to "Comment", p, class: "text-decoration-none text-white" %>
+            </button>
+        </div>
+        </div>
+        </div>
+        </div>
+    <% end %>
+<div>
