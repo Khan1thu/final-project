@@ -80,4 +80,5 @@ gem 'devise-bootstrapped'
 gem 'gravtastic'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
 

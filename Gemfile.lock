@@ -291,6 +291,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mini_magick
+  omniauth
   omniauth-facebook
   omniauth-rails_csrf_protection
   pg (~> 1.1)
