@@ -42,4 +42,10 @@ class User < ApplicationRecord
     def welcome_send
       WelcomeMailer.welcome_send(self).deliver
     end
+
+    followability
+
+    def unfollow(user)
+      followerable_relationships.where(followable_id: user.id).destory_all
+    end
   end

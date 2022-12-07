@@ -108,6 +108,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
+    followability (1.1.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     gravatar_image_tag (1.2.0)
@@ -285,6 +286,7 @@ DEPENDENCIES
   debug
   devise
   devise-bootstrapped
+  followability (~> 1.1)
   gravatar_image_tag
   gravtastic
   image_processing (~> 1.2)

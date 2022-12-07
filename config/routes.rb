@@ -10,4 +10,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   resources :users, only: [:show] 
+  post 'users/:id/follow', to: 'user#follow', as: 'follow'
+  post 'users/:id/unfollow', to: 'user#unfollow', as: 'unfollow'
+  post 'users/:id/accept', to: 'user#accept', as: 'accept'
+  post 'users/:id/decline', to: 'user#decline', as: 'decline'
+  post 'users/:id/cancel', to: 'user#cancel', as: 'cancel'
+
 end

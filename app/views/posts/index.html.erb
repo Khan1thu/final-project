@@ -1,6 +1,6 @@
 <%= render "nav"%>
 
-<h1 class="text-center mt-3">Welcome to the Wisp Social Media</h1>
+<h1 class="text-center mt-3">Welcome <%= current_user.email%></h1>
 
 <div id="posts">
   <% @posts.each do |p| %>
